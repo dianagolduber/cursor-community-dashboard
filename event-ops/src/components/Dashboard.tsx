@@ -9,7 +9,7 @@ import { SummaryBar } from "./SummaryBar";
 import { EventListNav } from "./EventListNav";
 import { EventDetail } from "./EventDetail";
 import { AddEventModal } from "./AddEventModal";
-import { OverviewReadme } from "./OverviewReadme";
+import { EventHealthOverview } from "./EventHealthOverview";
 
 function hydrateEvents(events: CafeEvent[]): CafeEvent[] {
   return events.map((event) => {
@@ -132,7 +132,10 @@ export function Dashboard() {
               onBriefingSent={handleBriefingSent}
             />
           ) : (
-            <OverviewReadme events={events} />
+            <EventHealthOverview
+              events={events}
+              onSelectEvent={setSelectedId}
+            />
           )}
         </main>
       </div>

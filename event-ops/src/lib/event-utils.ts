@@ -1,4 +1,4 @@
-import type { CafeEvent, EventStatus } from "./types";
+import type { CafeEvent, EventStatus, OpsChecklist } from "./types";
 import { getRiskLevel, RISK_ORDER } from "./risk";
 import type { RiskLevel } from "./types";
 import type { SortDir, SortKey } from "./types";
@@ -94,6 +94,17 @@ export function countContinents(events: CafeEvent[]): number {
 
 export function statusLabel(status: EventStatus): string {
   return status.charAt(0).toUpperCase() + status.slice(1);
+}
+
+export function checklistProgress(checklist: OpsChecklist): {
+  done: number;
+  total: number;
+} {
+  const values = Object.values(checklist);
+  return {
+    done: values.filter(Boolean).length,
+    total: values.length,
+  };
 }
 
 export function riskDotClass(level: RiskLevel): string {

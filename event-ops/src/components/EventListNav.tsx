@@ -38,7 +38,7 @@ export function EventListNav({
                 overviewActive ? "font-medium text-gray-900" : "text-gray-800"
               }`}
             >
-              Overview
+              Event health
             </span>
           </button>
         </li>
