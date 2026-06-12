@@ -14,8 +14,8 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cursor Cafe Event Ops",
-  description: "Global event operations dashboard for Cafe Cursor events",
+  title: "Cursor Cafe Ops",
+  description: "Operations dashboard for global Cafe Cursor events",
 };
 
 export default function RootLayout({

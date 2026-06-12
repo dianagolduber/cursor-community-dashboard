@@ -213,7 +213,7 @@ export function EventDetail({
         </section>
 
         <section className="mb-10 border-b border-gray-100 pb-10">
-          <SectionLabel>Ops checklist</SectionLabel>
+          <SectionLabel>Prep checklist</SectionLabel>
           <ul className="space-y-3">
             {CHECKLIST_ITEMS.map((item) => (
               <li key={item.key}>

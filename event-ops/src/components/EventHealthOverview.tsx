@@ -1,6 +1,5 @@
 import type { CafeEvent } from "@/lib/types";
 import {
-  checklistProgress,
   displayCity,
   formatEventDate,
   getEventStatus,
@@ -39,16 +38,42 @@ export function EventHealthOverview({
 }: EventHealthOverviewProps) {
   const sorted = sortEvents(events, "risk", "asc");
   const highRisk = events.filter((e) => getRiskLevel(e) === "high").length;
+  const totalRsvps = events.reduce((sum, e) => sum + e.rsvps, 0);
+  const continents = new Set(events.map((e) => e.continent)).size;
 
   return (
     <div className="px-4 py-6 md:px-8 md:py-8">
-      <div className="mb-6">
-        <h1 className="text-xl font-semibold text-gray-900">Event health</h1>
+      <div className="mb-8 max-w-2xl">
+        <h1 className="text-xl font-semibold text-gray-900">Overview</h1>
+        <p className="mt-3 text-base leading-relaxed text-gray-600">
+          One place to track Cafe Cursor events worldwide. See which cities need
+          attention, then click in to handle venue prep, host briefings, and
+          day-of FAQs.
+        </p>
+        <p className="mt-2 text-sm leading-relaxed text-gray-500">
+          Live RSVP data from Luma. Built to scale to 20 cafes. Add new events
+          by pasting a Luma URL.
+        </p>
+      </div>
+
+      <div className="mb-4">
+        <h2 className="text-xs font-medium text-gray-400">Event health</h2>
         <p className="mt-1 text-sm text-gray-500">
-          All cafes at a glance.{" "}
+          RSVP fill and risk per city. Red means low turnout and needs outreach.
+        </p>
+        <p className="mt-1 text-sm text-gray-500">
+          <span className="font-mono text-gray-700">{events.length}</span>{" "}
+          events ·{" "}
+          <span className="font-mono text-gray-700">
+            {totalRsvps.toLocaleString()}
+          </span>{" "}
+          RSVPs ·{" "}
+          <span className="font-mono text-gray-700">{continents}</span>{" "}
+          continents
           {highRisk > 0 && (
             <span className="text-red-600">
-              {highRisk} need attention.
+              {" "}
+              · {highRisk} need attention
             </span>
           )}
         </p>
@@ -57,7 +82,6 @@ export function EventHealthOverview({
       <div className="space-y-2 md:hidden">
         {sorted.map((event) => {
           const fillPct = Math.round(getFillRate(event) * 100);
-          const { done, total } = checklistProgress(event.opsChecklist);
           const status = getEventStatus(event);
 
           return (
@@ -76,12 +100,9 @@ export function EventHealthOverview({
               <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
                 <span>{formatEventDate(event.date, event.timezone)}</span>
                 <span className="font-mono">
-                  {event.rsvps}/{event.capacity} ({fillPct}%)
+                  {event.rsvps} RSVPs ({fillPct}% full)
                 </span>
                 <span>{statusLabel(status)}</span>
-                <span>
-                  Ops {done}/{total}
-                </span>
               </div>
             </button>
           );
@@ -97,14 +118,12 @@ export function EventHealthOverview({
               <th className="px-4 py-3">RSVPs</th>
               <th className="px-4 py-3">Fill</th>
               <th className="px-4 py-3">Status</th>
-              <th className="px-4 py-3">Ops</th>
               <th className="px-4 py-3">Risk</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
             {sorted.map((event) => {
               const fillPct = Math.round(getFillRate(event) * 100);
-              const { done, total } = checklistProgress(event.opsChecklist);
               const status = getEventStatus(event);
 
               return (
@@ -141,9 +160,6 @@ export function EventHealthOverview({
                   </td>
                   <td className="px-4 py-3 text-gray-600">
                     {statusLabel(status)}
-                  </td>
-                  <td className="px-4 py-3 font-mono text-gray-600">
-                    {done}/{total}
                   </td>
                   <td className="px-4 py-3">
                     <RiskBadge event={event} />
