@@ -1,0 +1,118 @@
+[
+  {
+    "id": "y7kles76",
+    "lumaUrl": "https://luma.com/y7kles76",
+    "lumaSlug": "y7kles76",
+    "name": "Cafe Cursor Eldoret",
+    "city": "Eldoret",
+    "country": "Kenya",
+    "continent": "Africa",
+    "date": "2026-06-13T06:30:00.000Z",
+    "endDate": "2026-06-13T13:30:00.000Z",
+    "venue": "Eldoret cafe (register for exact address)",
+    "venueAddress": "Eldoret, Kenya",
+    "hosts": ["Felix Jumason", "Tabitha Margaret", "Charles Moruri"],
+    "format": "Coworking day",
+    "rsvps": 96,
+    "capacity": 130,
+    "ticketTypes": [
+      { "name": "Cowork--Morning", "maxCapacity": 80, "spotsRemaining": 6 },
+      { "name": "Coworking--Afternoon", "maxCapacity": 50, "spotsRemaining": 28 }
+    ],
+    "description": "Full day of coworking, Cursor talk, and building together in Eldoret.",
+    "timezone": "Africa/Nairobi",
+    "opsChecklist": {
+      "venueConfirmed": false,
+      "cursorCreditsArranged": false,
+      "hostBriefingSent": false,
+      "dayOfFaqPosted": false
+    },
+    "dayOfFaq": ""
+  },
+  {
+    "id": "a091qgks",
+    "lumaUrl": "https://luma.com/a091qgks",
+    "lumaSlug": "a091qgks",
+    "name": "Cafe Cursor León",
+    "city": "León",
+    "country": "Mexico",
+    "continent": "North America",
+    "date": "2026-06-13T16:00:00.000Z",
+    "endDate": "2026-06-13T22:00:00.000Z",
+    "venue": "Moka & Kofi",
+    "venueAddress": "León de los Aldama, Mexico",
+    "hosts": ["Eduardo Orta Salazar"],
+    "format": "Multi-session drop-in",
+    "rsvps": 44,
+    "capacity": 30,
+    "ticketTypes": [
+      { "name": "Drop in", "maxCapacity": 30, "spotsRemaining": 9 }
+    ],
+    "description": "First Cursor Café in León — demos, productivity tips, and specialty coffee.",
+    "timezone": "America/Mexico_City",
+    "opsChecklist": {
+      "venueConfirmed": false,
+      "cursorCreditsArranged": false,
+      "hostBriefingSent": false,
+      "dayOfFaqPosted": false
+    },
+    "dayOfFaq": ""
+  },
+  {
+    "id": "cursor-292r",
+    "lumaUrl": "https://luma.com/cursor-292r",
+    "lumaSlug": "cursor-292r",
+    "name": "Café Cursor Oslo",
+    "city": "Oslo",
+    "country": "Norway",
+    "continent": "Europe",
+    "date": "2026-06-16T08:00:00.000Z",
+    "endDate": "2026-06-16T16:00:00.000Z",
+    "venue": "Trekanten Oslo",
+    "venueAddress": "Pilestredet 24, 0165 Oslo, Norway",
+    "hosts": ["Gisle Birkeland", "Alf-Henning Drage"],
+    "format": "Cafe Cursor meetup",
+    "rsvps": 118,
+    "capacity": 150,
+    "ticketTypes": [{ "name": "Standard" }],
+    "description": "Open working session at Trekanten — Cursor credits, coffee, and snacks on us.",
+    "timezone": "Europe/Oslo",
+    "opsChecklist": {
+      "venueConfirmed": false,
+      "cursorCreditsArranged": false,
+      "hostBriefingSent": false,
+      "dayOfFaqPosted": false
+    },
+    "dayOfFaq": ""
+  },
+  {
+    "id": "cursor-e88a",
+    "lumaUrl": "https://luma.com/cursor-e88a",
+    "lumaSlug": "cursor-e88a",
+    "name": "Cafe Cursor Tirana",
+    "city": "Tiranë",
+    "country": "Albania",
+    "continent": "Europe",
+    "date": "2026-06-25T16:00:00.000Z",
+    "endDate": "2026-06-25T19:30:00.000Z",
+    "venue": "Coolab",
+    "venueAddress": "Rruga e Dibrës Nr.65, Tiranë 1015, Albania",
+    "hosts": ["Dorian Kane", "Dhimiter Gero", "Coolab Tirana"],
+    "format": "Evening coworking session",
+    "rsvps": 6,
+    "capacity": 50,
+    "ticketTypes": [
+      { "name": "Drop in" },
+      { "name": "Co-working" }
+    ],
+    "description": "Evening community gathering for builders, founders, and AI enthusiasts.",
+    "timezone": "Europe/Tirane",
+    "opsChecklist": {
+      "venueConfirmed": false,
+      "cursorCreditsArranged": false,
+      "hostBriefingSent": false,
+      "dayOfFaqPosted": false
+    },
+    "dayOfFaq": ""
+  }
+]
